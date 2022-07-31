@@ -5,8 +5,10 @@ namespace ListAllCultures
 {
   internal class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
+      Action<string> Display = Console.WriteLine;
+      //Console.SetWindowSize(240, 94);
       // Display the header.
       Console.WriteLine("{0,-53}{1}", "CULTURE", "SPECIFIC CULTURE");
 
@@ -25,13 +27,12 @@ namespace ListAllCultures
         }
         catch (ArgumentException)
         {
-          Console.WriteLine("(no associated specific culture)");
+          Display("(no associated specific culture)");
         }
       }
 
-      Console.WriteLine("press any key to exit:");
+      Display("press any key to exit:");
       Console.ReadKey();
-
     }
   }
 }
